@@ -1,5 +1,4 @@
 
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
@@ -7,6 +6,7 @@ const authRouter = require('./routes/admin/auth');
 const adminProductsRouter = require('./routes/admin/products')
 const productsRouter = require('./routes/products')
 const cartsRouter = require('./routes/carts')
+const dotenv = require('dotenv');
 
 // Load environment variables from .env file
 dotenv.config();
