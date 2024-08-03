@@ -8,6 +8,9 @@ const adminProductsRouter = require('./routes/admin/products')
 const productsRouter = require('./routes/products')
 const cartsRouter = require('./routes/carts')
 
+// Load environment variables from .env file
+dotenv.config();
+
 const app = express();
 
 const PORT = process.env.PORT || 3000
@@ -16,7 +19,7 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
   cookieSession({
-    keys: ['lkasld235j']
+    keys: [process.env.SESSION_KEY]
   })
 );
 app.use(authRouter);
